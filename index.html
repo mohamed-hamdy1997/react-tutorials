@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
+    <!--    JSX-->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
@@ -12,10 +13,12 @@
 <div id="app">
 
 </div>
+
+<!--JSX-->
 <script type="text/babel">
 
-    var  name = "Mo.Hamdy";
-    var  ele1 =
+    var name = "Mo.Hamdy";
+    var ele1 =
         (<p>
             Hello React
             <span>Span1</span>
@@ -36,7 +39,50 @@
             'italic1'
         )
     );
-    ReactDOM.render([ele1,ele2], document.getElementById('app'));
+    ReactDOM.render([ele1, ele2], document.getElementById('app'));
+</script>
+
+<!--components-->
+<script type="text/babel">
+    class App extends React.Component {
+        render() {
+            return (
+                <div>
+                    <Header/>
+                    <Content/>
+                    <Footer/>
+                </div>
+            )
+        }
+    }
+
+    // Header component
+    class Header extends React.Component{
+        render() {
+            return (
+                <header>Header</header>
+            )
+        }
+    }
+    // content component
+    class Content extends React.Component{
+        render() {
+            return (
+                <main>Content</main>
+            )
+        }
+    }
+    // footer component
+    class Footer extends React.Component{
+        render() {
+            return(
+                <footer>Footer</footer>
+            )
+        }
+    }
+    ReactDOM.render(<App/>, document.getElementById('app'));
+    // OR
+    // ReactDOM.render(App(), document.getElementById('app'));
 </script>
 </body>
 </html>
