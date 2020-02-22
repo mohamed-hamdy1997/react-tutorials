@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+</div>
+<script type="text/babel">
+
+    var  name = "Mo.Hamdy";
+    var  ele1 =
+        (<p>
+            Hello React
+            <span>Span1</span>
+            <i>Span2</i>
+
+        </p>);
+    var ele2 = React.createElement(
+        'p',
+        {className: 'test', id: 'fP'},
+        React.createElement(
+            'span',
+            {className: 'span'},
+            'span1'
+        ),
+        React.createElement(
+            'i',
+            {className: 'italic'},
+            'italic1'
+        )
+    );
+    ReactDOM.render([ele1,ele2], document.getElementById('app'));
+</script>
+</body>
+</html>
