@@ -44,11 +44,13 @@
 
 <!--components-->
 <script type="text/babel">
+
+    // app component [parent]
     class App extends React.Component {
         render() {
             return (
                 <div>
-                    <Header/>
+                    <Header title="Hello from header"/>
                     <Content/>
                     <Footer/>
                 </div>
@@ -56,11 +58,11 @@
         }
     }
 
-    // Header component
+    // Header component [child]
     class Header extends React.Component{
         render() {
             return (
-                <header>Header</header>
+                <header>{this.props.title}</header>
             )
         }
     }
